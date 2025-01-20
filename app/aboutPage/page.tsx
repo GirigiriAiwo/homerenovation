@@ -12,7 +12,7 @@ const AboutPage = () => {
         <h1 className="text-5xl font-extrabold md:text-7xl text-center font-poppins">About Us</h1>
         <p className="mt-4 max-w-3xl text-center text-lg md:text-xl text-gray-300 font-poppins">
           We are more than just a team—we are dreamers, creators, and innovators.
-          Our goal is to redefine the boundaries of what's possible, one project at a time.
+          Our goal is to redefine the boundaries of whats possible, one project at a time.
         </p>
       </div>
 
@@ -20,7 +20,11 @@ const AboutPage = () => {
       <div className="py-20 px-6 md:px-16 lg:px-32 bg-[#1c1c1c] font-poppins">
         <h2 className="text-4xl font-bold text-center text-gray-100 md:text-5xl">Our Mission</h2>
         <p className="mt-6 w-full mx-auto text-justify text-lg text-gray-300">
-          At ABAPOMON, our mission is to transform homes into inspiring spaces that reflect your unique lifestyle. We combine creativity, craftsmanship, and innovation to deliver exceptional home renovations that are both functional and beautiful. Our skilled team works closely with clients to understand their vision and create personalized spaces. We prioritize quality, using the best materials and techniques to ensure long-lasting results. Committed to sustainability and innovation, we aim to make every renovation smooth, stress-free, and future-proof. Our goal is to create homes where you can thrive, blending comfort, joy, and inspiration.
+          At ABAPOMON, our mission is to transform homes into inspiring spaces that reflect your unique lifestyle. 
+          We combine creativity, craftsmanship, and innovation to deliver exceptional home renovations that are both functional and beautiful. 
+          Our skilled team works closely with clients to understand their vision and create personalized spaces. We prioritize quality, using the best materials and 
+          techniques to ensure long-lasting results. Committed to sustainability and innovation, we aim to make every renovation smooth, stress-free, and future-proof. 
+          Our goal is to create homes where you can thrive, blending comfort, joy, and inspiration.
         </p>
       </div>
 
@@ -73,8 +77,8 @@ const AboutPage = () => {
               className="rounded-lg border border-gray-700 p-6 shadow-lg bg-[#121212]"
             >
               <p className="text-gray-300 italic">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                tristique eros id consequat ultricies."
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                tristique eros id consequat ultricies.
               </p>
               <div className="mt-4 flex items-center space-x-4">
                 <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-gray-700">
