@@ -5,11 +5,11 @@ import { useEffect, useState } from 'react';
 const Background: NextPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
-    '/img1.jpg',
-    '/img2.jpg',
-    '/img3.jpg',
-    '/img4.jpg',
-    '/img5.jpg',
+    '/bg1.jpg',
+    '/bg2.jpg',
+    '/bg3.jpg',
+    '/bg4.jpg',
+    '/bg5.jpg',
   ];
 
   useEffect(() => {
