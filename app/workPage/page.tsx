@@ -3,18 +3,25 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const projects = [
   { id: 1, title: "Modern Kitchen Remodel", category: "kitchen", image: "/kitchen1.jpg", page: "kitchenPage" },
-  { id: 2, title: "Cozy Bathroom Upgrade", category: "bathroom", image: "/bathroom1.jpg", page: "kitchenPage" },
-  { id: 3, title: "Elegant Living Room", category: "living-room", image: "/livingroom1.jpg", page: "kitchenPage" },
-  { id: 4, title: "Backyard Patio Renovation", category: "exterior", image: "/backyardpatio1.jpg", page: "kitchenPage" },
-  { id: 5, title: "Poolside Relaxation", category: "outdoor", image: "/poolside.jpg", page: "kitchenPage" },
-  { id: 6, title: "Classic Home Office", category: "office", image: "/homeoffice.jpg", page: "kitchenPage" },
+  { id: 2, title: "Cozy Bathroom Upgrade", category: "bathroom", image: "/bathroom1.jpg", page: "bathroomPage" },
+  { id: 3, title: "Elegant Living Room", category: "living-room", image: "/livingroom1.jpg", page: "livingRoomPage" },
+  { id: 4, title: "Backyard Patio Renovation", category: "exterior", image: "/backyardpatio1.jpg", page: "backyardpatioPage" },
+  { id: 5, title: "Poolside Relaxation", category: "outdoor", image: "/poolside.jpg", page: "poolsidePage" },
+  { id: 6, title: "Classic Home Office", category: "office", image: "/homeoffice.jpg", page: "homeofficePage" },
 ];
+
+const categories = ["all", "kitchen", "bathroom", "living-room", "exterior", "outdoor", "office"];
 
 const GalleryPage = () => {
   const router = useRouter();
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  // Filter projects based on the selected category
+  const filteredProjects = selectedCategory === "all" ? projects : projects.filter(p => p.category === selectedCategory);
 
   return (
     <motion.div
@@ -23,7 +30,7 @@ const GalleryPage = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      {/* Navigation Placeholder */}
+      {/* Navigation */}
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-4xl font-bold text-gray-900">Our Work</h1>
         <nav className="hidden md:flex gap-6">
@@ -35,9 +42,24 @@ const GalleryPage = () => {
         </nav>
       </div>
 
+      {/* Filter Buttons */}
+      <div className="flex flex-wrap gap-3 mb-6">
+        {categories.map(category => (
+          <button
+            key={category}
+            className={`px-4 py-2 rounded-lg border transition ${
+              selectedCategory === category ? "bg-black text-white" : "bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
+            }`}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category.charAt(0).toUpperCase() + category.slice(1)}
+          </button>
+        ))}
+      </div>
+
       {/* Gallery Grid */}
       <motion.div className="grid grid-cols-1 max-w-full sm:grid-cols-2 md:grid-cols-3 gap-10">
-        {projects.map((project, index) => (
+        {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id}
             className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] cursor-pointer overflow-hidden group"
